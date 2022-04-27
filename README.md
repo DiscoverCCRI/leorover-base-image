@@ -17,17 +17,11 @@ br-e7058db0822d: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
         TX packets 0  bytes 0 (0.0 B)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
  ```
- 
-Then you are going to copy the IP address from the inet section. Next change into your ```etc``` directory with:
-
-```
-cd /etc
-```
 
 From here you will need to add your container to your hosts file as the root user. You will add this IP address with a 2 for the last digit instead of a 1, followed by a space and the name of the container, which for this project is clients. This should look like:
 
 ```
-sudo echo "172.18.0.2 client" >> hosts
+sudo echo "172.18.0.2 client" >> /etc/hosts
 ```
 
 Now we can build the container image by changing into the folder of the cloned repository and running the command:
