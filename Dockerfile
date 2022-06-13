@@ -1,5 +1,5 @@
-FROM ros:melodic
-ENV ROS_DISTRO=melodic
+FROM ros:noetic
+ENV ROS_DISTRO=noetic
 
 RUN mkdir -p /files/
 
