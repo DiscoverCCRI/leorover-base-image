@@ -10,4 +10,3 @@ services:
          - 8083:8080
         stdin_open: true
         tty: true
-        command: /bin/bash -c "cd /root/catkin_ws/src/ros_test/scripts && ./drive.py"
