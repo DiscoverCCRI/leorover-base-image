@@ -5,7 +5,7 @@ First, we need to build the container image by changing into the folder of the c
 docker build --network=host -t cjb873/leorover_image:1.0 .
 ```
 
-Optionally, you can get the image from docker hub. Note that this image in docker hub may not be fully up to date with the image built from the Dockerfile in this repo. Pull the image from docker hub using the following command: 
+Optionally, you can get the image from Docker Hub. Note that this image in Docker Hub may not be fully up to date with the image built from the Dockerfile in this repo. Pull the image from docker hub using the following command: 
 
 ```
 docker pull cjb873/leorover_image:1.0
