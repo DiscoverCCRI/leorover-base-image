@@ -50,4 +50,4 @@ angular:
   y: 0.0
   z: 0.0"
 ```
-If the rover moves, everything should be working correctly. If you want to use multiple Docker containers on the rover, you will need to add the specific IP address of its bridged network to the hosts file.
+If the rover moves, everything should be working correctly. If you want to use multiple Docker containers on the rover, you will need to add the specific IP address of each container's bridged network to the hosts file.
