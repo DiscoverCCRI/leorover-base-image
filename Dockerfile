@@ -8,11 +8,13 @@ COPY . /files/
 SHELL ["/bin/bash", "-c"]
 RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> ~/.bashrc
 RUN echo "source /root/catkin_ws/devel/setup.bash" >> ~/.bashrc
-RUN cd /root/ && mkdir catkin_ws && cd catkin_ws && mkdir src && cd src && catkin_create_pkg ros_test rospy roscpp std_msgs
-RUN . /opt/ros/$ROS_DISTRO/setup.bash && cd ~/catkin_ws && catkin_make
-COPY scripts /root/catkin_ws/src/ros_test/scripts
-RUN cd /root/catkin_ws/src/ros_test/scripts && chmod +x *
 RUN apt-get update
 RUN apt-get -y upgrade
-RUN apt-get -y install vim
-RUN apt-get -y install python3
+RUN apt-get -y install vim python3 git
+RUN cd ~/catkin_ws/src && git clone https://github.com/DiscoverCCRI/RoverAPI.git \
+&& mv ~/catkin_ws/src/RoverAPI/rover_api ~/catkin_ws/src \
+&& mv ~/catkin_ws/src/RoverAPI/scripts/example.py ~/ \
+&& chmod u+x ~/example.py \
+&& rm -r ~/catkin_ws/src/RoverAPI
+RUN . /opt/ros/$ROS_DISTRO/setup.bash && cd ~/catkin_ws && catkin_make
+
