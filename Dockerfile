@@ -11,6 +11,7 @@ RUN echo "source /root/catkin_ws/devel/setup.bash" >> ~/.bashrc
 RUN apt-get update
 RUN apt-get -y upgrade
 RUN apt-get -y install vim python3 git
+RUN mkdir -p ~/catkin_ws/src
 RUN cd ~/catkin_ws/src && git clone https://github.com/DiscoverCCRI/RoverAPI.git \
 && mv ~/catkin_ws/src/RoverAPI/rover_api ~/catkin_ws/src \
 && mv ~/catkin_ws/src/RoverAPI/scripts/example.py ~/ \
