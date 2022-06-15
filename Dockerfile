@@ -10,7 +10,7 @@ RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> ~/.bashrc
 RUN echo "source /root/catkin_ws/devel/setup.bash" >> ~/.bashrc
 RUN apt-get update
 RUN apt-get -y upgrade
-RUN apt-get -y install vim python3 git
+RUN apt-get -y install vim python3 git wget
 RUN mkdir -p ~/catkin_ws/src
 RUN cd ~/catkin_ws/src && git clone https://github.com/DiscoverCCRI/RoverAPI.git \
 && mv ~/catkin_ws/src/RoverAPI/rover_api ~/catkin_ws/src \
@@ -18,4 +18,7 @@ RUN cd ~/catkin_ws/src && git clone https://github.com/DiscoverCCRI/RoverAPI.git
 && chmod u+x ~/example.py \
 && rm -r ~/catkin_ws/src/RoverAPI
 RUN . /opt/ros/$ROS_DISTRO/setup.bash && cd ~/catkin_ws && catkin_make
+RUN cd ~/ && wget https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py
+RUN python3 -m pip install --upgrade pip && pip install Pillow
+
 
