@@ -2,7 +2,7 @@
 First, we need to build the container image by changing into the folder of the cloned repository and running the command:
 
 ```
-docker build --network=host -t ros_image:1.0 .
+docker build --network=host -t cjb873/leorover_image:1.0 .
 ```
 
 Then use docker-compose to run with the command:
