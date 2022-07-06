@@ -17,9 +17,8 @@ RUN cd ~/catkin_ws/src && git clone https://github.com/DiscoverCCRI/RoverAPI.git
 && mv ~/catkin_ws/src/RoverAPI/scripts/example.py ~/ \
 && chmod u+x ~/example.py \
 && rm -r ~/catkin_ws/src/RoverAPI
-RUN . /opt/ros/$ROS_DISTRO/setup.bash && cd ~/catkin_ws && catkin_make
 RUN cd ~/ && wget https://bootstrap.pypa.io/get-pip.py \
 && python3 get-pip.py && rm get-pip.py
-RUN python3 -m pip install --upgrade pip && pip install Pillow
-
-
+RUN python3 -m pip install --upgrade pip && pip install opencv-python numpy matplotlib
+RUN sudo apt-get install -y ros-noetic-cv-bridge
+RUN . /opt/ros/$ROS_DISTRO/setup.bash && cd ~/catkin_ws && catkin_make
