@@ -10,4 +10,3 @@ services:
          - 8083:8080
         stdin_open: true
         tty: true
-        command: cd ~/ && git clone https://github.com/DiscoverCCRI/RoverDemo.git && ./RoverDemo/manifest
