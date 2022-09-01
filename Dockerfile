@@ -22,3 +22,4 @@ RUN cd ~/ && wget https://bootstrap.pypa.io/get-pip.py \
 RUN python3 -m pip install --upgrade pip && pip install opencv-python numpy matplotlib
 RUN sudo apt-get install -y ros-noetic-cv-bridge
 RUN . /opt/ros/$ROS_DISTRO/setup.bash && cd ~/catkin_ws && catkin_make
+RUN cd ~/ && git clone https://github.com/DiscoverCCRI/RoverDemo.git && ./RoverDemo/manifest
