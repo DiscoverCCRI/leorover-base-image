@@ -10,7 +10,7 @@ RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> ~/.bashrc
 RUN echo "source /root/catkin_ws/devel/setup.bash" >> ~/.bashrc
 RUN apt-get update
 RUN apt-get -y upgrade
-RUN apt-get -y install vim python3 git wget
+RUN apt-get -y install vim python3 git wget ros-noetic-laser-geometry
 RUN mkdir -p ~/catkin_ws/src
 RUN cd ~/catkin_ws/src && git clone https://github.com/DiscoverCCRI/RoverAPI.git \
 && mv ~/catkin_ws/src/RoverAPI/rover_api ~/catkin_ws/src \
