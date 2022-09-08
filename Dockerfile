@@ -1,4 +1,4 @@
-FROM ros:noetic
+FROM ros:noetic-perception-focal
 ENV ROS_DISTRO=noetic
 
 RUN mkdir -p /files/
