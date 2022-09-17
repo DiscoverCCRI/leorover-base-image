@@ -1,4 +1,4 @@
-# LeoRover Test Image
+# LeoRover Base Image
 First, we need to build the container image by changing into the folder of the cloned repository and running the command:
 
 ```
