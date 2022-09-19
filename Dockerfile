@@ -1,6 +1,5 @@
 FROM ros:noetic-perception-focal
 ENV ROS_DISTRO=noetic
-ENV ROVER
 
 RUN mkdir -p /files/
 
