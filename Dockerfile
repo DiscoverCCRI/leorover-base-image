@@ -23,4 +23,4 @@ RUN python3 -m pip install --upgrade pip && pip install opencv-python numpy matp
 RUN sudo apt-get install -y ros-noetic-cv-bridge
 RUN . /opt/ros/$ROS_DISTRO/setup.bash && cd ~/catkin_ws && catkin_make
 RUN mkdir /experiment
-RUN echo "echo \"${ROS_MASTER_URI:7:10} $ROVER\" >> /etc/hosts" >> /root/.bashrc
+RUN echo "echo \"\${ROS_MASTER_URI:7:10} \$ROVER\" >> /etc/hosts" >> /root/.bashrc
