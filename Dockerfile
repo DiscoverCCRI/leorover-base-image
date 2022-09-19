@@ -1,5 +1,6 @@
 FROM ros:noetic-perception-focal
 ENV ROS_DISTRO=noetic
+ENV ROVER
 
 RUN mkdir -p /files/
 
@@ -24,3 +25,4 @@ RUN sudo apt-get install -y ros-noetic-cv-bridge
 RUN . /opt/ros/$ROS_DISTRO/setup.bash && cd ~/catkin_ws && catkin_make
 RUN cd ~/ && git clone https://github.com/DiscoverCCRI/RoverDemo.git && ./RoverDemo/manifest
 RUN mkdir /experiment
+RUN echo "echo \"${ROS_MASTER_URI:7:10} $ROVER\" >> /etc/hosts" >> /root/.bashrc
